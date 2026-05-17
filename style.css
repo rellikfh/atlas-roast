@@ -82,6 +82,9 @@ body {
 /* HERO */
 .hero {
   padding: 80px 0;
+  min-height: calc(100vh - 57px);
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
