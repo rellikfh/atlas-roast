@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll offset for sticky navbar (optional improvement)
   const links = document.querySelectorAll('a[href^="#"]');
 
   links.forEach(link => {
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       e.preventDefault();
 
-      const offset = 70; // approximate navbar height
+      const offset = 70;
       const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Simple navbar background enhancement on scroll
   const navbar = document.querySelector(".navbar");
 
   window.addEventListener("scroll", () => {
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Basic form handling (front-end only demo)
   const form = document.querySelector("form");
 
   if (form) {
@@ -45,16 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!name || !email) return;
 
-      // Since GitHub Pages has no backend, this is just a demo state
       alert(`Thanks ${name}! Your message has been received.`);
 
       form.reset();
     });
   }
 
-  // Optional: reveal-on-scroll effect (very light)
   const revealElements = document.querySelectorAll(
-    ".feature, .product-card, .client-logos img"
+    ".feature, .product-card, .client-card"
   );
 
   const observer = new IntersectionObserver(
@@ -75,4 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
     el.style.transition = "0.6s ease";
     observer.observe(el);
   });
+
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    logo.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
