@@ -85,13 +85,21 @@ body {
   min-height: calc(100vh - 57px);
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -105,9 +113,15 @@ body {
   margin-bottom: 24px;
 }
 
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
 .hero-image img {
   width: 100%;
-  border-radius: 12px;
+  height: 100%;
   object-fit: cover;
 }
 
