@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -167,6 +168,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-snap-align: start;
+  scroll-margin-top: 57px;
 }
 
 h2 {
